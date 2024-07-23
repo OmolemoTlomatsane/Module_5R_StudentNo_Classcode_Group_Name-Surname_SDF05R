@@ -52,3 +52,138 @@ p {
 }
 
 /* Add your custom styles for btn-1, btn-2, and btn-3 */
+/* Button 1 styling*/
+.btn-1{
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: aquamarine;
+    position: relative;
+    z-index: 0;
+    color:darkcyan;
+    border:none;
+}
+.btn-1::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background-color: antiquewhite;
+    left:0px;
+    top:0px;
+    border-radius: 10px;
+}
+.btn-1::before{
+    content:"";
+    background: linear-gradient(45deg, red,orange,yellow,green,lightblue,blue,purple,red);
+    position:absolute;
+    top:-2px;
+    left:-2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:calc(100% + 4px);
+    backdrop-filter: blur(50px);
+    animation: linearColor 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+.btn-1:hover{
+    animation: textBig 2s linear infinite;
+}
+@keyframes linearColor{
+    0%{ background-position: 0 0;}
+    50%{background-position: 400% 0;}
+}
+@keyframes textBig{
+    50%{font-size: small;}
+    100%{font-size:medium;
+         font-family:cursive;}
+}
+
+/*button 2 styling*/
+.btn-2{
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: hsl(180, 100%, 70%);
+    position: relative;
+    z-index: 0;
+    color:rgb(0, 139, 51);
+    border:2px inset d;
+    text-shadow: 0 0 0.5em red,
+                 0 0 0.5em blue;
+    box-shadow: inset 0 0 0.5em 0 red, 0 0 0.5em blue;
+    backdrop-filter: blur(50px);
+    animation: floaty 2s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.btn-2:hover{
+   animation: hoving 3s linear infinite;
+}
+@keyframes hoving{
+    0%{background-color: red;}
+    25%{background-color: rgb(205, 50, 50);}
+    50%{background-color: rgb(190, 85, 85);}
+    75%{background-color: rgb(194, 119, 119);}
+    100%{background-color: rgb(177, 121, 121);}
+}
+@keyframes floaty {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+        transform: translatey(-10px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+}
+/*button 3 styling*/
+.btn-3{
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: hsl(180, 100%, 70%);
+    position: relative;
+    z-index: 0;
+    color:rgb(0, 139, 51);
+    border:2px inset d;
+    text-shadow: 0 0 0.5em red,
+                 0 0 0.5em blue;
+    box-shadow: inset 0 0 0.5em 0 red, 0 0 0.5em blue;
+    backdrop-filter: blur(50px);
+    animation: grow 2s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+
+.btn-3:hover{
+    background: linear-gradient(45deg, red,orange,yellow,green,lightblue,blue,purple,red);
+    animation: rotate 2s linear infinite;
+}
+@keyframes grow {
+    50% {
+        width:145px;
+        height:55px;
+    }
+    100% {
+       
+       width:150px;
+       height:60px;
+    }
+}
+@keyframes rotate{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(90deg);}
+    50%{ transform: rotate(180deg);}
+    75%{transform:rotate(270deg);}
+    100%{transform: rotate(360deg);}
+}
